@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,15 +12,14 @@ public class Goods implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private Category category;
+	private Category categoryByCategory3Id;
+	private Category categoryByCategory2Id;
+	private Category categoryByCategory1Id;
 	private String name;
 	private Integer price;
 	private Integer storage;
 	private String description;
 	private String imgAddress;
-	private Short status;
-	private Timestamp createdTime;
-	private Timestamp updatedTime;
 	private Set cartGoodses = new HashSet(0);
 	private Set orderGoodses = new HashSet(0);
 
@@ -32,32 +30,25 @@ public class Goods implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Goods(Category category, String name, Integer price,
-			Integer storage, Short status, Timestamp createdTime,
-			Timestamp updatedTime) {
-		this.category = category;
+	public Goods(String name, Integer price, Integer storage) {
 		this.name = name;
 		this.price = price;
 		this.storage = storage;
-		this.status = status;
-		this.createdTime = createdTime;
-		this.updatedTime = updatedTime;
 	}
 
 	/** full constructor */
-	public Goods(Category category, String name, Integer price,
-			Integer storage, String description, String imgAddress,
-			Short status, Timestamp createdTime, Timestamp updatedTime,
-			Set cartGoodses, Set orderGoodses) {
-		this.category = category;
+	public Goods(Category categoryByCategory3Id,
+			Category categoryByCategory2Id, Category categoryByCategory1Id,
+			String name, Integer price, Integer storage, String description,
+			String imgAddress, Set cartGoodses, Set orderGoodses) {
+		this.categoryByCategory3Id = categoryByCategory3Id;
+		this.categoryByCategory2Id = categoryByCategory2Id;
+		this.categoryByCategory1Id = categoryByCategory1Id;
 		this.name = name;
 		this.price = price;
 		this.storage = storage;
 		this.description = description;
 		this.imgAddress = imgAddress;
-		this.status = status;
-		this.createdTime = createdTime;
-		this.updatedTime = updatedTime;
 		this.cartGoodses = cartGoodses;
 		this.orderGoodses = orderGoodses;
 	}
@@ -72,12 +63,28 @@ public class Goods implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Category getCategory() {
-		return this.category;
+	public Category getCategoryByCategory3Id() {
+		return this.categoryByCategory3Id;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setCategoryByCategory3Id(Category categoryByCategory3Id) {
+		this.categoryByCategory3Id = categoryByCategory3Id;
+	}
+
+	public Category getCategoryByCategory2Id() {
+		return this.categoryByCategory2Id;
+	}
+
+	public void setCategoryByCategory2Id(Category categoryByCategory2Id) {
+		this.categoryByCategory2Id = categoryByCategory2Id;
+	}
+
+	public Category getCategoryByCategory1Id() {
+		return this.categoryByCategory1Id;
+	}
+
+	public void setCategoryByCategory1Id(Category categoryByCategory1Id) {
+		this.categoryByCategory1Id = categoryByCategory1Id;
 	}
 
 	public String getName() {
@@ -118,30 +125,6 @@ public class Goods implements java.io.Serializable {
 
 	public void setImgAddress(String imgAddress) {
 		this.imgAddress = imgAddress;
-	}
-
-	public Short getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Short status) {
-		this.status = status;
-	}
-
-	public Timestamp getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(Timestamp createdTime) {
-		this.createdTime = createdTime;
-	}
-
-	public Timestamp getUpdatedTime() {
-		return this.updatedTime;
-	}
-
-	public void setUpdatedTime(Timestamp updatedTime) {
-		this.updatedTime = updatedTime;
 	}
 
 	public Set getCartGoodses() {

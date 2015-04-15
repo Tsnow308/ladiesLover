@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,10 +15,7 @@ public class Address implements java.io.Serializable {
 	private User user;
 	private String description;
 	private String postcode;
-	private String pohoneNum;
-	private Short status;
-	private Timestamp createdTime;
-	private Timestamp updatedTime;
+	private String phoneNum;
 	private Set orders = new HashSet(0);
 
 	// Constructors
@@ -30,28 +26,20 @@ public class Address implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Address(User user, String description, String postcode,
-			String pohoneNum, Short status, Timestamp createdTime,
-			Timestamp updatedTime) {
+			String phoneNum) {
 		this.user = user;
 		this.description = description;
 		this.postcode = postcode;
-		this.pohoneNum = pohoneNum;
-		this.status = status;
-		this.createdTime = createdTime;
-		this.updatedTime = updatedTime;
+		this.phoneNum = phoneNum;
 	}
 
 	/** full constructor */
 	public Address(User user, String description, String postcode,
-			String pohoneNum, Short status, Timestamp createdTime,
-			Timestamp updatedTime, Set orders) {
+			String phoneNum, Set orders) {
 		this.user = user;
 		this.description = description;
 		this.postcode = postcode;
-		this.pohoneNum = pohoneNum;
-		this.status = status;
-		this.createdTime = createdTime;
-		this.updatedTime = updatedTime;
+		this.phoneNum = phoneNum;
 		this.orders = orders;
 	}
 
@@ -89,36 +77,12 @@ public class Address implements java.io.Serializable {
 		this.postcode = postcode;
 	}
 
-	public String getPohoneNum() {
-		return this.pohoneNum;
+	public String getPhoneNum() {
+		return this.phoneNum;
 	}
 
-	public void setPohoneNum(String pohoneNum) {
-		this.pohoneNum = pohoneNum;
-	}
-
-	public Short getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Short status) {
-		this.status = status;
-	}
-
-	public Timestamp getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(Timestamp createdTime) {
-		this.createdTime = createdTime;
-	}
-
-	public Timestamp getUpdatedTime() {
-		return this.updatedTime;
-	}
-
-	public void setUpdatedTime(Timestamp updatedTime) {
-		this.updatedTime = updatedTime;
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
 	}
 
 	public Set getOrders() {

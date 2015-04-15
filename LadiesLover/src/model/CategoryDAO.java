@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.LockOptions;
@@ -30,8 +29,6 @@ public class CategoryDAO {
 			.getLogger(CategoryDAO.class);
 	// property constants
 	public static final String NAME = "name";
-	public static final String UPID = "upid";
-	public static final String STATUS = "status";
 
 	private SessionFactory sessionFactory;
 
@@ -112,14 +109,6 @@ public class CategoryDAO {
 
 	public List findByName(Object name) {
 		return findByProperty(NAME, name);
-	}
-
-	public List findByUpid(Object upid) {
-		return findByProperty(UPID, upid);
-	}
-
-	public List findByStatus(Object status) {
-		return findByProperty(STATUS, status);
 	}
 
 	public List findAll() {

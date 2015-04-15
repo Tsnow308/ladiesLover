@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.LockOptions;
@@ -33,7 +32,6 @@ public class GoodsDAO {
 	public static final String STORAGE = "storage";
 	public static final String DESCRIPTION = "description";
 	public static final String IMG_ADDRESS = "imgAddress";
-	public static final String STATUS = "status";
 
 	private SessionFactory sessionFactory;
 
@@ -129,10 +127,6 @@ public class GoodsDAO {
 
 	public List findByImgAddress(Object imgAddress) {
 		return findByProperty(IMG_ADDRESS, imgAddress);
-	}
-
-	public List findByStatus(Object status) {
-		return findByProperty(STATUS, status);
 	}
 
 	public List findAll() {

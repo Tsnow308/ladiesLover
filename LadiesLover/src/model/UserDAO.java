@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.LockOptions;
@@ -32,7 +31,6 @@ public class UserDAO {
 	public static final String PASSWORD = "password";
 	public static final String PHONE_NUM = "phoneNum";
 	public static final String EMAIL = "email";
-	public static final String STATUS = "status";
 
 	private SessionFactory sessionFactory;
 
@@ -124,10 +122,6 @@ public class UserDAO {
 
 	public List findByEmail(Object email) {
 		return findByProperty(EMAIL, email);
-	}
-
-	public List findByStatus(Object status) {
-		return findByProperty(STATUS, status);
 	}
 
 	public List findAll() {

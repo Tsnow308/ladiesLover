@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,11 +13,9 @@ public class Category implements java.io.Serializable {
 
 	private Integer id;
 	private String name;
-	private Integer upid;
-	private Short status;
-	private Timestamp createdTime;
-	private Timestamp updatedTime;
-	private Set goodses = new HashSet(0);
+	private Set goodsesForCategory2Id = new HashSet(0);
+	private Set goodsesForCategory1Id = new HashSet(0);
+	private Set goodsesForCategory3Id = new HashSet(0);
 
 	// Constructors
 
@@ -27,24 +24,17 @@ public class Category implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Category(String name, Integer upid, Short status,
-			Timestamp createdTime, Timestamp updatedTime) {
+	public Category(String name) {
 		this.name = name;
-		this.upid = upid;
-		this.status = status;
-		this.createdTime = createdTime;
-		this.updatedTime = updatedTime;
 	}
 
 	/** full constructor */
-	public Category(String name, Integer upid, Short status,
-			Timestamp createdTime, Timestamp updatedTime, Set goodses) {
+	public Category(String name, Set goodsesForCategory2Id,
+			Set goodsesForCategory1Id, Set goodsesForCategory3Id) {
 		this.name = name;
-		this.upid = upid;
-		this.status = status;
-		this.createdTime = createdTime;
-		this.updatedTime = updatedTime;
-		this.goodses = goodses;
+		this.goodsesForCategory2Id = goodsesForCategory2Id;
+		this.goodsesForCategory1Id = goodsesForCategory1Id;
+		this.goodsesForCategory3Id = goodsesForCategory3Id;
 	}
 
 	// Property accessors
@@ -65,44 +55,28 @@ public class Category implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public Integer getUpid() {
-		return this.upid;
+	public Set getGoodsesForCategory2Id() {
+		return this.goodsesForCategory2Id;
 	}
 
-	public void setUpid(Integer upid) {
-		this.upid = upid;
+	public void setGoodsesForCategory2Id(Set goodsesForCategory2Id) {
+		this.goodsesForCategory2Id = goodsesForCategory2Id;
 	}
 
-	public Short getStatus() {
-		return this.status;
+	public Set getGoodsesForCategory1Id() {
+		return this.goodsesForCategory1Id;
 	}
 
-	public void setStatus(Short status) {
-		this.status = status;
+	public void setGoodsesForCategory1Id(Set goodsesForCategory1Id) {
+		this.goodsesForCategory1Id = goodsesForCategory1Id;
 	}
 
-	public Timestamp getCreatedTime() {
-		return this.createdTime;
+	public Set getGoodsesForCategory3Id() {
+		return this.goodsesForCategory3Id;
 	}
 
-	public void setCreatedTime(Timestamp createdTime) {
-		this.createdTime = createdTime;
-	}
-
-	public Timestamp getUpdatedTime() {
-		return this.updatedTime;
-	}
-
-	public void setUpdatedTime(Timestamp updatedTime) {
-		this.updatedTime = updatedTime;
-	}
-
-	public Set getGoodses() {
-		return this.goodses;
-	}
-
-	public void setGoodses(Set goodses) {
-		this.goodses = goodses;
+	public void setGoodsesForCategory3Id(Set goodsesForCategory3Id) {
+		this.goodsesForCategory3Id = goodsesForCategory3Id;
 	}
 
 }

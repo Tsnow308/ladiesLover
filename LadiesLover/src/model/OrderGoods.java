@@ -1,7 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
-
 /**
  * OrderGoods entity. @author MyEclipse Persistence Tools
  */
@@ -14,11 +12,8 @@ public class OrderGoods implements java.io.Serializable {
 	private Goods goods;
 	private Order order;
 	private Integer amount;
-	private String goodsSize;
+	private Integer goodsSize;
 	private String goodsColor;
-	private Short status;
-	private Timestamp createdTime;
-	private Timestamp updatedTime;
 
 	// Constructors
 
@@ -28,16 +23,12 @@ public class OrderGoods implements java.io.Serializable {
 
 	/** full constructor */
 	public OrderGoods(Goods goods, Order order, Integer amount,
-			String goodsSize, String goodsColor, Short status,
-			Timestamp createdTime, Timestamp updatedTime) {
+			Integer goodsSize, String goodsColor) {
 		this.goods = goods;
 		this.order = order;
 		this.amount = amount;
 		this.goodsSize = goodsSize;
 		this.goodsColor = goodsColor;
-		this.status = status;
-		this.createdTime = createdTime;
-		this.updatedTime = updatedTime;
 	}
 
 	// Property accessors
@@ -74,11 +65,11 @@ public class OrderGoods implements java.io.Serializable {
 		this.amount = amount;
 	}
 
-	public String getGoodsSize() {
+	public Integer getGoodsSize() {
 		return this.goodsSize;
 	}
 
-	public void setGoodsSize(String goodsSize) {
+	public void setGoodsSize(Integer goodsSize) {
 		this.goodsSize = goodsSize;
 	}
 
@@ -88,30 +79,6 @@ public class OrderGoods implements java.io.Serializable {
 
 	public void setGoodsColor(String goodsColor) {
 		this.goodsColor = goodsColor;
-	}
-
-	public Short getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Short status) {
-		this.status = status;
-	}
-
-	public Timestamp getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(Timestamp createdTime) {
-		this.createdTime = createdTime;
-	}
-
-	public Timestamp getUpdatedTime() {
-		return this.updatedTime;
-	}
-
-	public void setUpdatedTime(Timestamp updatedTime) {
-		this.updatedTime = updatedTime;
 	}
 
 }

@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.LockOptions;
@@ -30,8 +29,7 @@ public class AddressDAO {
 	// property constants
 	public static final String DESCRIPTION = "description";
 	public static final String POSTCODE = "postcode";
-	public static final String POHONE_NUM = "pohoneNum";
-	public static final String STATUS = "status";
+	public static final String PHONE_NUM = "phoneNum";
 
 	private SessionFactory sessionFactory;
 
@@ -118,12 +116,8 @@ public class AddressDAO {
 		return findByProperty(POSTCODE, postcode);
 	}
 
-	public List findByPohoneNum(Object pohoneNum) {
-		return findByProperty(POHONE_NUM, pohoneNum);
-	}
-
-	public List findByStatus(Object status) {
-		return findByProperty(STATUS, status);
+	public List findByPhoneNum(Object phoneNum) {
+		return findByProperty(PHONE_NUM, phoneNum);
 	}
 
 	public List findAll() {

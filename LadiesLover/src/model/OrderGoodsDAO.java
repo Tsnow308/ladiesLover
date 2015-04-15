@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
 import java.util.List;
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
@@ -31,7 +30,6 @@ public class OrderGoodsDAO {
 	public static final String AMOUNT = "amount";
 	public static final String GOODS_SIZE = "goodsSize";
 	public static final String GOODS_COLOR = "goodsColor";
-	public static final String STATUS = "status";
 
 	private SessionFactory sessionFactory;
 
@@ -121,10 +119,6 @@ public class OrderGoodsDAO {
 
 	public List findByGoodsColor(Object goodsColor) {
 		return findByProperty(GOODS_COLOR, goodsColor);
-	}
-
-	public List findByStatus(Object status) {
-		return findByProperty(STATUS, status);
 	}
 
 	public List findAll() {

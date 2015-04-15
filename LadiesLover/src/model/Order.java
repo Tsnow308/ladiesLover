@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,9 +16,6 @@ public class Order implements java.io.Serializable {
 	private Address address;
 	private Float totalPrice;
 	private Integer orderStatus;
-	private Short status;
-	private Timestamp createdTime;
-	private Timestamp updatedTime;
 	private Set orderGoodses = new HashSet(0);
 
 	// Constructors
@@ -30,28 +26,20 @@ public class Order implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Order(User user, Address address, Float totalPrice,
-			Integer orderStatus, Short status, Timestamp createdTime,
-			Timestamp updatedTime) {
+			Integer orderStatus) {
 		this.user = user;
 		this.address = address;
 		this.totalPrice = totalPrice;
 		this.orderStatus = orderStatus;
-		this.status = status;
-		this.createdTime = createdTime;
-		this.updatedTime = updatedTime;
 	}
 
 	/** full constructor */
 	public Order(User user, Address address, Float totalPrice,
-			Integer orderStatus, Short status, Timestamp createdTime,
-			Timestamp updatedTime, Set orderGoodses) {
+			Integer orderStatus, Set orderGoodses) {
 		this.user = user;
 		this.address = address;
 		this.totalPrice = totalPrice;
 		this.orderStatus = orderStatus;
-		this.status = status;
-		this.createdTime = createdTime;
-		this.updatedTime = updatedTime;
 		this.orderGoodses = orderGoodses;
 	}
 
@@ -95,30 +83,6 @@ public class Order implements java.io.Serializable {
 
 	public void setOrderStatus(Integer orderStatus) {
 		this.orderStatus = orderStatus;
-	}
-
-	public Short getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Short status) {
-		this.status = status;
-	}
-
-	public Timestamp getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(Timestamp createdTime) {
-		this.createdTime = createdTime;
-	}
-
-	public Timestamp getUpdatedTime() {
-		return this.updatedTime;
-	}
-
-	public void setUpdatedTime(Timestamp updatedTime) {
-		this.updatedTime = updatedTime;
 	}
 
 	public Set getOrderGoodses() {

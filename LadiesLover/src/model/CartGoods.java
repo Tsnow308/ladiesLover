@@ -1,7 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
-
 /**
  * CartGoods entity. @author MyEclipse Persistence Tools
  */
@@ -14,9 +12,6 @@ public class CartGoods implements java.io.Serializable {
 	private Goods goods;
 	private Cart cart;
 	private Integer amount;
-	private Short status;
-	private Timestamp createdTime;
-	private Timestamp updatedTime;
 
 	// Constructors
 
@@ -25,14 +20,10 @@ public class CartGoods implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public CartGoods(Goods goods, Cart cart, Integer amount, Short status,
-			Timestamp createdTime, Timestamp updatedTime) {
+	public CartGoods(Goods goods, Cart cart, Integer amount) {
 		this.goods = goods;
 		this.cart = cart;
 		this.amount = amount;
-		this.status = status;
-		this.createdTime = createdTime;
-		this.updatedTime = updatedTime;
 	}
 
 	// Property accessors
@@ -67,30 +58,6 @@ public class CartGoods implements java.io.Serializable {
 
 	public void setAmount(Integer amount) {
 		this.amount = amount;
-	}
-
-	public Short getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Short status) {
-		this.status = status;
-	}
-
-	public Timestamp getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(Timestamp createdTime) {
-		this.createdTime = createdTime;
-	}
-
-	public Timestamp getUpdatedTime() {
-		return this.updatedTime;
-	}
-
-	public void setUpdatedTime(Timestamp updatedTime) {
-		this.updatedTime = updatedTime;
 	}
 
 }

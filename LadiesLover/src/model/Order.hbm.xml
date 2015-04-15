@@ -22,15 +22,6 @@
         <property name="orderStatus" type="java.lang.Integer">
             <column name="order_status" not-null="true" />
         </property>
-        <property name="status" type="java.lang.Short">
-            <column name="status" not-null="true" />
-        </property>
-        <property name="createdTime" type="java.sql.Timestamp">
-            <column name="created_time" length="19" not-null="true" />
-        </property>
-        <property name="updatedTime" type="java.sql.Timestamp">
-            <column name="updated_time" length="19" not-null="true" />
-        </property>
         <set name="orderGoodses" inverse="true">
             <key>
                 <column name="order_id" not-null="true" />

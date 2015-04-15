@@ -19,17 +19,8 @@
         <property name="postcode" type="java.lang.String">
             <column name="postcode" length="6" not-null="true" />
         </property>
-        <property name="pohoneNum" type="java.lang.String">
-            <column name="pohone_num" length="11" not-null="true" />
-        </property>
-        <property name="status" type="java.lang.Short">
-            <column name="status" not-null="true" />
-        </property>
-        <property name="createdTime" type="java.sql.Timestamp">
-            <column name="created_time" length="19" not-null="true" />
-        </property>
-        <property name="updatedTime" type="java.sql.Timestamp">
-            <column name="updated_time" length="19" not-null="true" />
+        <property name="phoneNum" type="java.lang.String">
+            <column name="phone_num" length="11" not-null="true" />
         </property>
         <set name="orders" inverse="true">
             <key>

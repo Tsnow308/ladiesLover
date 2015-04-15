@@ -1,0 +1,36 @@
+<!--
+MyEclipse Database Explorer Driver Repository
+-->
+
+<Beans version="1.0">
+    <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
+        <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>-5a2319b5:14cbad2a5ff:-7f93</string>
+        </identifier>
+        <jarFileName/>
+        <jarFileNames Indexed="true">
+            <Bean Class="net.sourceforge.squirrel_sql.fw.util.beanwrapper.StringWrapper">
+                <string>F:\MyEclipse\LadiesLover\LadiesLover\mysql-connector-java-5.1.22-bin.jar</string>
+            </Bean>
+        </jarFileNames>
+        <name>MyEclipseDriverName</name>
+        <url>jdbc:mysql://localhost:3306/ladieslover</url>
+    </Bean>
+    <Bean Class="com.genuitec.eclipse.sqlexplorer.utils.ConnectionProfile">
+        <activate>false</activate>
+        <driverIdentifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>-5a2319b5:14cbad2a5ff:-7f93</string>
+        </driverIdentifier>
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>6405b58e:14c97a76566:-7fda</string>
+        </identifier>
+        <name>LadiesLover</name>
+        <password encryption="true">MYd0caEsyFE=</password>
+        <promptForPassword>false</promptForPassword>
+        <schema Indexed="true"/>
+        <schemaDisplayPolicy>0</schemaDisplayPolicy>
+        <url>jdbc:mysql://localhost:3306/ladieslover</url>
+        <userName>root</userName>
+    </Bean>
+</Beans>

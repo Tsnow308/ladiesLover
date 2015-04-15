@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,9 +16,6 @@ public class User implements java.io.Serializable {
 	private String password;
 	private String phoneNum;
 	private String email;
-	private Short status;
-	private Timestamp createdTime;
-	private Timestamp updatedTime;
 	private Set addresses = new HashSet(0);
 	private Set carts = new HashSet(0);
 	private Set orders = new HashSet(0);
@@ -31,27 +27,19 @@ public class User implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public User(String username, String password, String email, Short status,
-			Timestamp createdTime, Timestamp updatedTime) {
+	public User(String username, String password, String email) {
 		this.username = username;
 		this.password = password;
 		this.email = email;
-		this.status = status;
-		this.createdTime = createdTime;
-		this.updatedTime = updatedTime;
 	}
 
 	/** full constructor */
 	public User(String username, String password, String phoneNum,
-			String email, Short status, Timestamp createdTime,
-			Timestamp updatedTime, Set addresses, Set carts, Set orders) {
+			String email, Set addresses, Set carts, Set orders) {
 		this.username = username;
 		this.password = password;
 		this.phoneNum = phoneNum;
 		this.email = email;
-		this.status = status;
-		this.createdTime = createdTime;
-		this.updatedTime = updatedTime;
 		this.addresses = addresses;
 		this.carts = carts;
 		this.orders = orders;
@@ -97,30 +85,6 @@ public class User implements java.io.Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public Short getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Short status) {
-		this.status = status;
-	}
-
-	public Timestamp getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(Timestamp createdTime) {
-		this.createdTime = createdTime;
-	}
-
-	public Timestamp getUpdatedTime() {
-		return this.updatedTime;
-	}
-
-	public void setUpdatedTime(Timestamp updatedTime) {
-		this.updatedTime = updatedTime;
 	}
 
 	public Set getAddresses() {

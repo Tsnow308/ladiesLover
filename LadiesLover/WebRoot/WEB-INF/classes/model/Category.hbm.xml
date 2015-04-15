@@ -13,21 +13,27 @@
         <property name="name" type="java.lang.String">
             <column name="name" length="10" not-null="true" />
         </property>
-        <property name="upid" type="java.lang.Integer">
-            <column name="upid" not-null="true" />
-        </property>
-        <property name="status" type="java.lang.Short">
-            <column name="status" not-null="true" />
-        </property>
-        <property name="createdTime" type="java.sql.Timestamp">
-            <column name="created_time" length="19" not-null="true" />
-        </property>
-        <property name="updatedTime" type="java.sql.Timestamp">
-            <column name="updated_time" length="19" not-null="true" />
-        </property>
-        <set name="goodses" inverse="true">
+        <set name="goodsesForCategory2Id" inverse="true">
             <key>
-                <column name="category_id" not-null="true" />
+                <column name="category2_id">
+                    <comment>类别2</comment>
+                </column>
+            </key>
+            <one-to-many class="model.Goods" />
+        </set>
+        <set name="goodsesForCategory1Id" inverse="true">
+            <key>
+                <column name="category1_id">
+                    <comment>类别1</comment>
+                </column>
+            </key>
+            <one-to-many class="model.Goods" />
+        </set>
+        <set name="goodsesForCategory3Id" inverse="true">
+            <key>
+                <column name="category3_id">
+                    <comment>类别3</comment>
+                </column>
             </key>
             <one-to-many class="model.Goods" />
         </set>
