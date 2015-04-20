@@ -16,21 +16,30 @@ public class UserAction extends ActionSupport{
 	private String username;
 	private Map<String,Object> session;
 	private String password;
-	private Map<String,Object> result;
 	
 	public String login() throws Exception{
-		result = new HashMap<String,Object>();
 		User user = userService.isValidUser(username,password);
 		if(user!=null){
 			session = ActionContext.getContext().getSession();
 			session.put("user",user);
-			result.put("success", true);
+			
+
+			return "success";
 		}
 		else{
-			result.put("success", false);
-			System.out.println("error...............");
+			return "error";
 		}
-		return "success";
+	}
+	
+	public String register() throws Exception{
+		boolean result = userService.register(username, password);
+		if(result == true){
+			return "success";
+		}
+		else{
+			return "error";
+		}
+		
 	}
 
 	public String getUsername() {
