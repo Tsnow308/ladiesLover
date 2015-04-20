@@ -125,19 +125,19 @@
   </div>
 
 		<div class="grid_login">
-			<form class="registed">
+			<form action="login.action" class="registed"  method="post" enctype="multipart/form-data">
 				<h2>已注册用户</h2>
 							
 				<p>如果您已经拥有一个账户，请登录：</p>
 							
 				<div class="email">
 					<strong>邮箱地址:</strong><sup class="surely">*</sup><br/>
-					<input type="email" name="" class="" value="" />
+					<input type="email" name="username" class="" value="" />
 				</div><!-- .email -->
 							
 				<div class="password">
 					<strong>密码:</strong><sup class="surely">*</sup><br/>
-					<input type="password" name="" class="" value="" />
+					<input type="password" name="password" class="" value="" />
 					<a class="forgot" href="#">忘记密码?</a>
 				</div><!-- .password -->
 				
