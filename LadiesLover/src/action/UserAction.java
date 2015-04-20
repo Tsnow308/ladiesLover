@@ -10,7 +10,7 @@ import model.User;
 import service.UserService;
 
 public class UserAction extends ActionSupport{
-	private UserService userService;
+	private UserService userService = new UserService();
 
 	private User user;
 	private String username;
