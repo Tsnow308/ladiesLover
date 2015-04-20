@@ -4,7 +4,7 @@ import model.User;
 import model.UserDAO;
 
 public class UserService {
-	private UserDAO userDao;
+	private UserDAO userDao = new UserDAO();
 
 	public User isValidUser(String username,String password){
 		User user = (User) userDao.findByUsername(username);
