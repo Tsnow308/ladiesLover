@@ -3,56 +3,16 @@
 	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" xmlns:tx="http://www.springframework.org/schema/tx">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
 
-	<bean id="dataSource"
-		class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="url"
-			value="jdbc:mysql://localhost:3306/ladieslover">
-		</property>
-		<property name="username" value="root"></property>
-		<property name="password" value="000000"></property>
-	</bean>
 	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="dataSource">
-			<ref bean="dataSource" />
-		</property>
-		<property name="hibernateProperties">
-			<props>
-				<prop key="hibernate.dialect">
-					org.hibernate.dialect.MySQLDialect
-				</prop>
-			</props>
-		</property>
-		<property name="mappingResources">
-			<list>
-				<value>model/Address.hbm.xml</value>
-				<value>model/CartGoods.hbm.xml</value>
-				<value>model/Cart.hbm.xml</value>
-				<value>model/Category.hbm.xml</value>
-				<value>model/Goods.hbm.xml</value>
-				<value>model/OrderGoods.hbm.xml</value>
-				<value>model/Order.hbm.xml</value>
-				<value>model/User.hbm.xml</value></list>
-		</property></bean>
-	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-	<tx:annotation-driven transaction-manager="transactionManager" /><bean
-		id="AddressDAO" class="model.AddressDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-</bean>
-	<bean id="CartGoodsDAO" class="model.CartGoodsDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
 		</property>
 	</bean>
-	<bean id="CartDAO" class="model.CartDAO">
+	<bean id="OrderDAO" class="model.OrderDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -62,22 +22,32 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="GoodsDAO" class="model.GoodsDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="OrderGoodsDAO" class="model.OrderGoodsDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="OrderDAO" class="model.OrderDAO">
+	<bean id="CartGoodsDAO" class="model.CartGoodsDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="UserDAO" class="model.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AddressDAO" class="model.AddressDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="GoodsDAO" class="model.GoodsDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CartDAO" class="model.CartDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="OrderGoodsDAO" class="model.OrderGoodsDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

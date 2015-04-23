@@ -2,15 +2,11 @@ package model;
 
 import java.util.List;
 import java.util.Set;
-import org.hibernate.LockOptions;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Example;
+import org.hibernate.LockMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -23,22 +19,11 @@ import org.springframework.transaction.annotation.Transactional;
  * @see model.Category
  * @author MyEclipse Persistence Tools
  */
-@Transactional
-public class CategoryDAO {
+public class CategoryDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory
 			.getLogger(CategoryDAO.class);
 	// property constants
 	public static final String NAME = "name";
-
-	private SessionFactory sessionFactory;
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
-	private Session getCurrentSession() {
-		return sessionFactory.getCurrentSession();
-	}
 
 	protected void initDao() {
 		// do nothing
@@ -47,7 +32,7 @@ public class CategoryDAO {
 	public void save(Category transientInstance) {
 		log.debug("saving Category instance");
 		try {
-			getCurrentSession().save(transientInstance);
+			getHibernateTemplate().save(transientInstance);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
@@ -58,7 +43,7 @@ public class CategoryDAO {
 	public void delete(Category persistentInstance) {
 		log.debug("deleting Category instance");
 		try {
-			getCurrentSession().delete(persistentInstance);
+			getHibernateTemplate().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -69,7 +54,7 @@ public class CategoryDAO {
 	public Category findById(java.lang.Integer id) {
 		log.debug("getting Category instance with id: " + id);
 		try {
-			Category instance = (Category) getCurrentSession().get(
+			Category instance = (Category) getHibernateTemplate().get(
 					"model.Category", id);
 			return instance;
 		} catch (RuntimeException re) {
@@ -81,8 +66,7 @@ public class CategoryDAO {
 	public List findByExample(Category instance) {
 		log.debug("finding Category instance by example");
 		try {
-			List results = getCurrentSession().createCriteria("model.Category")
-					.add(Example.create(instance)).list();
+			List results = getHibernateTemplate().findByExample(instance);
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -98,9 +82,7 @@ public class CategoryDAO {
 		try {
 			String queryString = "from Category as model where model."
 					+ propertyName + "= ?";
-			Query queryObject = getCurrentSession().createQuery(queryString);
-			queryObject.setParameter(0, value);
-			return queryObject.list();
+			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
 			throw re;
@@ -115,8 +97,7 @@ public class CategoryDAO {
 		log.debug("finding all Category instances");
 		try {
 			String queryString = "from Category";
-			Query queryObject = getCurrentSession().createQuery(queryString);
-			return queryObject.list();
+			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
 			throw re;
@@ -126,7 +107,7 @@ public class CategoryDAO {
 	public Category merge(Category detachedInstance) {
 		log.debug("merging Category instance");
 		try {
-			Category result = (Category) getCurrentSession().merge(
+			Category result = (Category) getHibernateTemplate().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -139,7 +120,7 @@ public class CategoryDAO {
 	public void attachDirty(Category instance) {
 		log.debug("attaching dirty Category instance");
 		try {
-			getCurrentSession().saveOrUpdate(instance);
+			getHibernateTemplate().saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -150,8 +131,7 @@ public class CategoryDAO {
 	public void attachClean(Category instance) {
 		log.debug("attaching clean Category instance");
 		try {
-			getCurrentSession().buildLockRequest(LockOptions.NONE).lock(
-					instance);
+			getHibernateTemplate().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);

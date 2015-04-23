@@ -2,15 +2,11 @@ package model;
 
 import java.util.List;
 import java.util.Set;
-import org.hibernate.LockOptions;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Example;
+import org.hibernate.LockMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 /**
  * A data access object (DAO) providing persistence and search support for Goods
@@ -23,8 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @see model.Goods
  * @author MyEclipse Persistence Tools
  */
-@Transactional
-public class GoodsDAO {
+public class GoodsDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory.getLogger(GoodsDAO.class);
 	// property constants
 	public static final String NAME = "name";
@@ -33,16 +28,6 @@ public class GoodsDAO {
 	public static final String DESCRIPTION = "description";
 	public static final String IMG_ADDRESS = "imgAddress";
 
-	private SessionFactory sessionFactory;
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
-	private Session getCurrentSession() {
-		return sessionFactory.getCurrentSession();
-	}
-
 	protected void initDao() {
 		// do nothing
 	}
@@ -50,7 +35,7 @@ public class GoodsDAO {
 	public void save(Goods transientInstance) {
 		log.debug("saving Goods instance");
 		try {
-			getCurrentSession().save(transientInstance);
+			getHibernateTemplate().save(transientInstance);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
@@ -61,7 +46,7 @@ public class GoodsDAO {
 	public void delete(Goods persistentInstance) {
 		log.debug("deleting Goods instance");
 		try {
-			getCurrentSession().delete(persistentInstance);
+			getHibernateTemplate().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -72,7 +57,8 @@ public class GoodsDAO {
 	public Goods findById(java.lang.Integer id) {
 		log.debug("getting Goods instance with id: " + id);
 		try {
-			Goods instance = (Goods) getCurrentSession().get("model.Goods", id);
+			Goods instance = (Goods) getHibernateTemplate().get("model.Goods",
+					id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -83,8 +69,7 @@ public class GoodsDAO {
 	public List findByExample(Goods instance) {
 		log.debug("finding Goods instance by example");
 		try {
-			List results = getCurrentSession().createCriteria("model.Goods")
-					.add(Example.create(instance)).list();
+			List results = getHibernateTemplate().findByExample(instance);
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -100,9 +85,7 @@ public class GoodsDAO {
 		try {
 			String queryString = "from Goods as model where model."
 					+ propertyName + "= ?";
-			Query queryObject = getCurrentSession().createQuery(queryString);
-			queryObject.setParameter(0, value);
-			return queryObject.list();
+			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
 			throw re;
@@ -133,8 +116,7 @@ public class GoodsDAO {
 		log.debug("finding all Goods instances");
 		try {
 			String queryString = "from Goods";
-			Query queryObject = getCurrentSession().createQuery(queryString);
-			return queryObject.list();
+			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
 			throw re;
@@ -144,7 +126,8 @@ public class GoodsDAO {
 	public Goods merge(Goods detachedInstance) {
 		log.debug("merging Goods instance");
 		try {
-			Goods result = (Goods) getCurrentSession().merge(detachedInstance);
+			Goods result = (Goods) getHibernateTemplate().merge(
+					detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -156,7 +139,7 @@ public class GoodsDAO {
 	public void attachDirty(Goods instance) {
 		log.debug("attaching dirty Goods instance");
 		try {
-			getCurrentSession().saveOrUpdate(instance);
+			getHibernateTemplate().saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -167,8 +150,7 @@ public class GoodsDAO {
 	public void attachClean(Goods instance) {
 		log.debug("attaching clean Goods instance");
 		try {
-			getCurrentSession().buildLockRequest(LockOptions.NONE).lock(
-					instance);
+			getHibernateTemplate().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);

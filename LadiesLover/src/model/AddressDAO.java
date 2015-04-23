@@ -2,15 +2,11 @@ package model;
 
 import java.util.List;
 import java.util.Set;
-import org.hibernate.LockOptions;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Example;
+import org.hibernate.LockMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -23,23 +19,12 @@ import org.springframework.transaction.annotation.Transactional;
  * @see model.Address
  * @author MyEclipse Persistence Tools
  */
-@Transactional
-public class AddressDAO {
+public class AddressDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory.getLogger(AddressDAO.class);
 	// property constants
 	public static final String DESCRIPTION = "description";
 	public static final String POSTCODE = "postcode";
 	public static final String PHONE_NUM = "phoneNum";
-
-	private SessionFactory sessionFactory;
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
-	private Session getCurrentSession() {
-		return sessionFactory.getCurrentSession();
-	}
 
 	protected void initDao() {
 		// do nothing
@@ -48,7 +33,7 @@ public class AddressDAO {
 	public void save(Address transientInstance) {
 		log.debug("saving Address instance");
 		try {
-			getCurrentSession().save(transientInstance);
+			getHibernateTemplate().save(transientInstance);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
@@ -59,7 +44,7 @@ public class AddressDAO {
 	public void delete(Address persistentInstance) {
 		log.debug("deleting Address instance");
 		try {
-			getCurrentSession().delete(persistentInstance);
+			getHibernateTemplate().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -70,7 +55,7 @@ public class AddressDAO {
 	public Address findById(java.lang.Integer id) {
 		log.debug("getting Address instance with id: " + id);
 		try {
-			Address instance = (Address) getCurrentSession().get(
+			Address instance = (Address) getHibernateTemplate().get(
 					"model.Address", id);
 			return instance;
 		} catch (RuntimeException re) {
@@ -82,8 +67,7 @@ public class AddressDAO {
 	public List findByExample(Address instance) {
 		log.debug("finding Address instance by example");
 		try {
-			List results = getCurrentSession().createCriteria("model.Address")
-					.add(Example.create(instance)).list();
+			List results = getHibernateTemplate().findByExample(instance);
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -99,9 +83,7 @@ public class AddressDAO {
 		try {
 			String queryString = "from Address as model where model."
 					+ propertyName + "= ?";
-			Query queryObject = getCurrentSession().createQuery(queryString);
-			queryObject.setParameter(0, value);
-			return queryObject.list();
+			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
 			throw re;
@@ -124,8 +106,7 @@ public class AddressDAO {
 		log.debug("finding all Address instances");
 		try {
 			String queryString = "from Address";
-			Query queryObject = getCurrentSession().createQuery(queryString);
-			return queryObject.list();
+			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
 			throw re;
@@ -135,7 +116,7 @@ public class AddressDAO {
 	public Address merge(Address detachedInstance) {
 		log.debug("merging Address instance");
 		try {
-			Address result = (Address) getCurrentSession().merge(
+			Address result = (Address) getHibernateTemplate().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -148,7 +129,7 @@ public class AddressDAO {
 	public void attachDirty(Address instance) {
 		log.debug("attaching dirty Address instance");
 		try {
-			getCurrentSession().saveOrUpdate(instance);
+			getHibernateTemplate().saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -159,8 +140,7 @@ public class AddressDAO {
 	public void attachClean(Address instance) {
 		log.debug("attaching clean Address instance");
 		try {
-			getCurrentSession().buildLockRequest(LockOptions.NONE).lock(
-					instance);
+			getHibernateTemplate().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);

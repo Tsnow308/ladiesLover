@@ -2,15 +2,11 @@ package model;
 
 import java.util.List;
 import java.util.Set;
-import org.hibernate.LockOptions;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Example;
+import org.hibernate.LockMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 /**
  * A data access object (DAO) providing persistence and search support for User
@@ -23,24 +19,13 @@ import org.springframework.transaction.annotation.Transactional;
  * @see model.User
  * @author MyEclipse Persistence Tools
  */
-@Transactional
-public class UserDAO {
+public class UserDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory.getLogger(UserDAO.class);
 	// property constants
 	public static final String USERNAME = "username";
 	public static final String PASSWORD = "password";
 	public static final String PHONE_NUM = "phoneNum";
 	public static final String EMAIL = "email";
-
-	private SessionFactory sessionFactory;
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
-	private Session getCurrentSession() {
-		return sessionFactory.getCurrentSession();
-	}
 
 	protected void initDao() {
 		// do nothing
@@ -49,7 +34,7 @@ public class UserDAO {
 	public void save(User transientInstance) {
 		log.debug("saving User instance");
 		try {
-			getCurrentSession().save(transientInstance);
+			getHibernateTemplate().save(transientInstance);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
@@ -60,7 +45,7 @@ public class UserDAO {
 	public void delete(User persistentInstance) {
 		log.debug("deleting User instance");
 		try {
-			getCurrentSession().delete(persistentInstance);
+			getHibernateTemplate().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -71,7 +56,7 @@ public class UserDAO {
 	public User findById(java.lang.Integer id) {
 		log.debug("getting User instance with id: " + id);
 		try {
-			User instance = (User) getCurrentSession().get("model.User", id);
+			User instance = (User) getHibernateTemplate().get("model.User", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -82,8 +67,7 @@ public class UserDAO {
 	public List findByExample(User instance) {
 		log.debug("finding User instance by example");
 		try {
-			List results = getCurrentSession().createCriteria("model.User")
-					.add(Example.create(instance)).list();
+			List results = getHibernateTemplate().findByExample(instance);
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -99,9 +83,7 @@ public class UserDAO {
 		try {
 			String queryString = "from User as model where model."
 					+ propertyName + "= ?";
-			Query queryObject = getCurrentSession().createQuery(queryString);
-			queryObject.setParameter(0, value);
-			return queryObject.list();
+			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
 			throw re;
@@ -128,8 +110,7 @@ public class UserDAO {
 		log.debug("finding all User instances");
 		try {
 			String queryString = "from User";
-			Query queryObject = getCurrentSession().createQuery(queryString);
-			return queryObject.list();
+			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
 			throw re;
@@ -139,7 +120,7 @@ public class UserDAO {
 	public User merge(User detachedInstance) {
 		log.debug("merging User instance");
 		try {
-			User result = (User) getCurrentSession().merge(detachedInstance);
+			User result = (User) getHibernateTemplate().merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -151,7 +132,7 @@ public class UserDAO {
 	public void attachDirty(User instance) {
 		log.debug("attaching dirty User instance");
 		try {
-			getCurrentSession().saveOrUpdate(instance);
+			getHibernateTemplate().saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -162,8 +143,7 @@ public class UserDAO {
 	public void attachClean(User instance) {
 		log.debug("attaching clean User instance");
 		try {
-			getCurrentSession().buildLockRequest(LockOptions.NONE).lock(
-					instance);
+			getHibernateTemplate().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);

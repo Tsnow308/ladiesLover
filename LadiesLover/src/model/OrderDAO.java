@@ -2,15 +2,11 @@ package model;
 
 import java.util.List;
 import java.util.Set;
-import org.hibernate.LockOptions;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Example;
+import org.hibernate.LockMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 /**
  * A data access object (DAO) providing persistence and search support for Order
@@ -23,22 +19,11 @@ import org.springframework.transaction.annotation.Transactional;
  * @see model.Order
  * @author MyEclipse Persistence Tools
  */
-@Transactional
-public class OrderDAO {
+public class OrderDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory.getLogger(OrderDAO.class);
 	// property constants
 	public static final String TOTAL_PRICE = "totalPrice";
 	public static final String ORDER_STATUS = "orderStatus";
-
-	private SessionFactory sessionFactory;
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
-	private Session getCurrentSession() {
-		return sessionFactory.getCurrentSession();
-	}
 
 	protected void initDao() {
 		// do nothing
@@ -47,7 +32,7 @@ public class OrderDAO {
 	public void save(Order transientInstance) {
 		log.debug("saving Order instance");
 		try {
-			getCurrentSession().save(transientInstance);
+			getHibernateTemplate().save(transientInstance);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
@@ -58,7 +43,7 @@ public class OrderDAO {
 	public void delete(Order persistentInstance) {
 		log.debug("deleting Order instance");
 		try {
-			getCurrentSession().delete(persistentInstance);
+			getHibernateTemplate().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -69,7 +54,8 @@ public class OrderDAO {
 	public Order findById(java.lang.Integer id) {
 		log.debug("getting Order instance with id: " + id);
 		try {
-			Order instance = (Order) getCurrentSession().get("model.Order", id);
+			Order instance = (Order) getHibernateTemplate().get("model.Order",
+					id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -80,8 +66,7 @@ public class OrderDAO {
 	public List findByExample(Order instance) {
 		log.debug("finding Order instance by example");
 		try {
-			List results = getCurrentSession().createCriteria("model.Order")
-					.add(Example.create(instance)).list();
+			List results = getHibernateTemplate().findByExample(instance);
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -97,9 +82,7 @@ public class OrderDAO {
 		try {
 			String queryString = "from Order as model where model."
 					+ propertyName + "= ?";
-			Query queryObject = getCurrentSession().createQuery(queryString);
-			queryObject.setParameter(0, value);
-			return queryObject.list();
+			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
 			throw re;
@@ -118,8 +101,7 @@ public class OrderDAO {
 		log.debug("finding all Order instances");
 		try {
 			String queryString = "from Order";
-			Query queryObject = getCurrentSession().createQuery(queryString);
-			return queryObject.list();
+			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
 			throw re;
@@ -129,7 +111,8 @@ public class OrderDAO {
 	public Order merge(Order detachedInstance) {
 		log.debug("merging Order instance");
 		try {
-			Order result = (Order) getCurrentSession().merge(detachedInstance);
+			Order result = (Order) getHibernateTemplate().merge(
+					detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -141,7 +124,7 @@ public class OrderDAO {
 	public void attachDirty(Order instance) {
 		log.debug("attaching dirty Order instance");
 		try {
-			getCurrentSession().saveOrUpdate(instance);
+			getHibernateTemplate().saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -152,8 +135,7 @@ public class OrderDAO {
 	public void attachClean(Order instance) {
 		log.debug("attaching clean Order instance");
 		try {
-			getCurrentSession().buildLockRequest(LockOptions.NONE).lock(
-					instance);
+			getHibernateTemplate().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
