@@ -10,7 +10,7 @@ import model.User;
 import service.UserService;
 
 public class UserAction extends ActionSupport{
-	private UserService userService = new UserService();
+	private UserService userService;
 
 	private User user;
 	private String username;
@@ -56,5 +56,29 @@ public class UserAction extends ActionSupport{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public UserService getUserService() {
+		return userService;
+	}
+
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
 	}
 }

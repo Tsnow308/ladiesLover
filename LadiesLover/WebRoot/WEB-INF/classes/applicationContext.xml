@@ -51,4 +51,15 @@
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
-	</bean></beans>
+	</bean>
+	<bean id="UserService" class="service.UserService">
+		<property name="userDAO">
+			<ref bean="UserDAO" />
+		</property>
+	</bean>
+	<bean id="UserAction" class="action.UserAction">
+		<property name="userService">
+			<ref bean="UserService" />
+		</property>
+	</bean>
+	</beans>
