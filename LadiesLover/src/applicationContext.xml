@@ -12,6 +12,7 @@
 			value="classpath:hibernate.cfg.xml">
 		</property>
 	</bean>
+	<!-- **********************************************DAO********************************************** -->
 	<bean id="OrderDAO" class="model.OrderDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
@@ -52,14 +53,86 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	<!-- **********************************************Service********************************************** -->
 	<bean id="UserService" class="service.UserService">
 		<property name="userDAO">
 			<ref bean="UserDAO" />
 		</property>
 	</bean>
+	<bean id="CartService" class="service.CartService">
+		<property name="cartDAO">
+			<ref bean="CartDAO" />
+		</property>
+	</bean>
+	<bean id="CartGoodsService" class="service.CartGoodsService">
+		<property name="cartGoodsDAO">
+			<ref bean="CartGoodsDAO" />
+		</property>
+	</bean>
+	<bean id="CategoryService" class="service.CategoryService">
+		<property name="categoryDAO">
+			<ref bean="CategoryDAO" />
+		</property>
+	</bean>
+	<bean id="GoodsService" class="service.GoodsService">
+		<property name="goodsDAO">
+			<ref bean="GoodsDAO" />
+		</property>
+	</bean>
+	<bean id="OrderService" class="service.OrderService">
+		<property name="orderDAO">
+			<ref bean="OrderDAO" />
+		</property>
+	</bean>
+	<bean id="OrderGoodsService" class="service.OrderGoodsService">
+		<property name="orderGoodsDAO">
+			<ref bean="OrderGoodsDAO" />
+		</property>
+	</bean>
+	<bean id="AddressService" class="service.AddressService">
+		<property name="addressDAO">
+			<ref bean="AddressDAO" />
+		</property>
+	</bean>
+	<!-- **********************************************Action********************************************** -->
 	<bean id="UserAction" class="action.UserAction">
 		<property name="userService">
 			<ref bean="UserService" />
+		</property>
+	</bean>
+	<bean id="CartAction" class="action.CartAction">
+		<property name="cartService">
+			<ref bean="CartService" />
+		</property>
+	</bean>
+	<bean id="CartGoodsAction" class="action.CartGoodsAction">
+		<property name="cartGoodsService">
+			<ref bean="CartGoodsService" />
+		</property>
+	</bean>
+	<bean id="CategoryAction" class="action.CategoryAction">
+		<property name="categoryService">
+			<ref bean="CategoryService" />
+		</property>
+	</bean>
+	<bean id="GoodsAction" class="action.GoodsAction">
+		<property name="goodsService">
+			<ref bean="GoodsService" />
+		</property>
+	</bean>
+	<bean id="OrderAction" class="action.OrderAction">
+		<property name="orderService">
+			<ref bean="OrderService" />
+		</property>
+	</bean>
+	<bean id="OrderGoodsAction" class="action.OrderGoodsAction">
+		<property name="orderGoodsService">
+			<ref bean="OrderGoodsService" />
+		</property>
+	</bean>
+	<bean id="AddressAction" class="action.AddressAction">
+		<property name="addressService">
+			<ref bean="AddressService" />
 		</property>
 	</bean>
 	</beans>
