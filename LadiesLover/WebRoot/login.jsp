@@ -87,19 +87,19 @@
     <div id="blank_div"></div>
 
     <div class="grid_register">
-      <form class="registed">
+      <form class="registed" action="register.action">
         <h2>未注册用户</h2>
               
         <p>如果您尚未拥有一个账户，快速注册：</p>
               
         <div class="email">
           <strong>邮箱地址:</strong><sup class="surely">*</sup><br/>
-          <input type="email" name="" class="" value="" />
+          <input type="email" name="username" class="" value="" />
         </div>
               
         <div class="password">
           <strong>密码:</strong><sup class="surely">*</sup><br/>
-          <input id="password_reg" type="password" name="pwd" class="" value="" />
+          <input id="password_reg" type="password" name="password" class="" value="" />
         </div>
 
         <div class="password">
