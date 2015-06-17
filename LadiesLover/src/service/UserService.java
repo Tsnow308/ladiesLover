@@ -11,7 +11,11 @@ public class UserService {
 
 	public User isValidUser(String username,String password){
 		List userList = userDAO.findByUsername(username);
-		User user = (User) userList.get(0);
+		User user = null;
+		if (!userList.isEmpty()) {
+			user = (User) userList.get(0);
+		}
+		
 		if(user != null && user.getPassword().equalsIgnoreCase(password))
 			return user;
 		else
