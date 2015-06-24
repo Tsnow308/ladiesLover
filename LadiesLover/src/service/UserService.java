@@ -31,15 +31,16 @@ public class UserService {
 	}
 
 	public boolean register(String username,String password){
-		User user = (User) userDAO.findByUsername(username);
-		 if(user != null){
+//		User user = (User) userDAO.findByUsername(username);
+		List list = userDAO.findByUsername(username);
+		 if(list != null && list.size() != 0){
 			 return false;
 		 }
 		 else{
 			 User newuser = new User();
 			 newuser.setUsername(username);
 			 newuser.setPassword(password);
-			 newuser.setEmail(password);
+			 newuser.setEmail(username);
 			 userDAO.save(newuser);
 			 return true;
 		 }

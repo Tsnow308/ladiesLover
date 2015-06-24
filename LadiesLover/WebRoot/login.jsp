@@ -87,7 +87,7 @@
     <div id="blank_div"></div>
 
     <div class="grid_register">
-      <form class="registed" action="register.action">
+      <form class="registed" action="register.action" method="post" enctype="multipart/form-data">
         <h2>未注册用户</h2>
               
         <p>如果您尚未拥有一个账户，快速注册：</p>
@@ -107,10 +107,12 @@
           <input id="password_reg_repeat" type="password" name="pwd_repeat"/>
         </div>
 
+        <!--
         <div class="email">
           <strong>验证码:</strong><sup class="surely">*</sup><br/>
           <input type="text" name="" class="" value="" />
         </div>
+    -->
         
         <!-- <div class="remember">
           <input class="niceCheck" type="checkbox" name="Remember_password" />

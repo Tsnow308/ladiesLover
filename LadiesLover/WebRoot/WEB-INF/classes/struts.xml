@@ -6,10 +6,9 @@
 			<result name="error">error.jsp</result>  
             <result name="success">index.jsp</result>
 		</action>
-		<action name="register" class="action.UserAction" method="">
-				<result type="json">
-					<param name="root">result</param>
-				</result>
+		<action name="register" class="UserAction" method="register">
+			<result name="error">error.jsp</result>  
+            <result name="success">index.jsp</result>
 		</action>
 	</package>
 </struts>    
