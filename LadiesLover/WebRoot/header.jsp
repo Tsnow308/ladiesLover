@@ -13,6 +13,10 @@
       </div>
     </div> --><!-- #top -->
 
+    
+
+
+
     <div class="clear"></div>
 
     <header id="branding">
@@ -63,13 +67,21 @@
         </ul>
 
         <nav class="private">
-          <ul>
-            <li><a href="catalog_list.jsp">我的账户</a></li>
-    <li class="separator">|</li>
-            <li><a href="login.jsp">登录</a></li>
-    <li class="separator">|</li>
-            <li><a href="login.jsp">注册</a></li>
-          </ul>
+          <ul id="userStatus">
+            <!--<li><a href="catalog_list.jsp">我的账户</a></li>
+    <li class="separator">|</li>-->
+
+            <%
+              if((String)session.getAttribute("username")!=null){
+                String username=(String)session.getAttribute("username");
+                out.print("<li><a href=\"catalog_list.jsp\">"+ username +"</a></li>");
+              } else {
+                out.print("<li><a href=\"login.jsp\">login</a></li><li class=\"separator\">|</li><li><a href=\"login.jsp\">register</a></li>");
+              }
+            %>
+
+
+            </ul>
         </nav><!-- .private -->
 
       </div><!-- .grid_6 -->
