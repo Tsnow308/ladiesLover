@@ -22,7 +22,7 @@ public class UserAction extends ActionSupport{
 		if(user!=null){
 			session = ActionContext.getContext().getSession();
 			session.put("user",user);
-			
+			session.put("username", username);
 
 			return "success";
 		}
