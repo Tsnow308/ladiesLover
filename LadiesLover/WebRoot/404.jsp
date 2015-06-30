@@ -26,7 +26,7 @@
 		$("select").selectBox();
 	});
   </script>
-
+<!-- -->
   <script>
 	$(document).ready(function(){
 		$("#myController").jFlow({
