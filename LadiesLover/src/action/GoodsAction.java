@@ -12,6 +12,7 @@ import service.GoodsService;
 public class GoodsAction extends ActionSupport {
 	private GoodsService goodsService;
 	private Map<String,Object> session;
+	private int id;
 
 	public GoodsService getGoodsService() {
 		return goodsService;
@@ -34,6 +35,19 @@ public class GoodsAction extends ActionSupport {
 		}
 		
 	}
+	
+	public String getGoodDetail(){
+		Goods result = goodsService.getGoods(id);
+		if(result != null ){
+			session = ActionContext.getContext().getSession();
+			session.put("goods",result);
+			
+			return "success";
+		}
+		else{
+			return "error";
+		}
+	}
 
 	public Map<String, Object> getSession() {
 		return session;
@@ -41,5 +55,13 @@ public class GoodsAction extends ActionSupport {
 
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

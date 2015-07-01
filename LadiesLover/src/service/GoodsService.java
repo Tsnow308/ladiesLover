@@ -25,4 +25,14 @@ public class GoodsService {
 			return null;
 		}
 	}
+	
+	public Goods getGoods(int id){
+		Goods result = goodsDAO.findById(id);
+		if(result != null){
+			return result;
+		}
+		else{
+			return null;
+		}
+	}
 }
