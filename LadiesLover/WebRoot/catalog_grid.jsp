@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ page import="java.util.List"%>
+<%@ page import="model.Goods"%>
 <html>
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
@@ -199,218 +201,21 @@
 	      <div class="grid_product">
 
 
-
-		     <div class="grid_3 product">
-			    <div class="prev">
-				   <a href="product_page.jsp"><img src="images/product_1.png" alt="" title="" /></a>
-			    </div><!-- .prev -->
-			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
-			    <div class="cart">
-				   <div class="price">
-					  <div class="vert">
-						 <div class="price_new">$550.00</div>
-						 <div class="price_old">$725.00</div>
-					  </div>
-				   </div>
-				   <a href="#" class="like"></a>
-				   <a href="#" class="bay"></a>
-			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
-		     
-		     <div class="grid_3 product">
-			    <img class="sale" src="images/sale.png" alt="Sale"/>
-			    <div class="prev">
-				   <a href="product_page.jsp"><img src="images/product_2.png" alt="" title="" /></a>
-			    </div><!-- .prev -->
-			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
-			    <div class="cart">
-				   <div class="price">
-					  <div class="vert">
-						 <div class="price_new">$550.00</div>
-						 <div class="price_old">$725.00</div>
-					  </div>
-				   </div>
-				   <a href="#" class="like"></a>
-				   <a href="#" class="bay"></a>
-			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
-		     
-		     <div class="grid_3 product">
-			    <img class="sale" src="images/new.png" alt="New"/>
-			    <div class="prev">
-				   <a href="product_page.jsp"><img src="images/product_3.png" alt="" title="" /></a>
-			    </div><!-- .prev -->
-			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
-			    <div class="cart">
-				   <div class="price">
-					  <div class="vert">
-						 <div class="price_new">$550.00</div>
-						 <div class="price_old">$725.00</div>
-					  </div>
-				   </div>
-				   <a href="#" class="like"></a>
-				   <a href="#" class="bay"></a>
-			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
-		     
-		     <div class="grid_3 product">
-			    <img class="sale" src="images/top.png" alt="Top"/>
-			    <div class="prev">
-				   <a href="product_page.jsp"><img src="images/product_4.png" alt="" title="" /></a>
-			    </div><!-- .prev -->
-			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
-			    <div class="cart">
-				   <div class="price">
-					  <div class="vert">
-						 <div class="price_new">$550.00</div>
-						 <div class="price_old">$725.00</div>
-					  </div>
-				   </div>
-				   <a href="#" class="like"></a>
-				   <a href="#" class="bay"></a>
-			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
-		     
-		     <div class="grid_3 product">
-			    <div class="prev">
-				   <a href="product_page.jsp"><img src="images/product_5.png" alt="" title="" /></a>
-			    </div><!-- .prev -->
-			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
-			    <div class="cart">
-				   <div class="price">
-					  <div class="vert">
-						 <div class="price_new">$550.00</div>
-						 <div class="price_old">$725.00</div>
-					  </div>
-				   </div>
-				   <a href="#" class="like"></a>
-				   <a href="#" class="bay"></a>
-			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
-		     
-		     <div class="grid_3 product">
-			    <div class="prev">
-				   <a href="product_page.jsp"><img src="images/product_6.png" alt="" title="" /></a>
-			    </div><!-- .prev -->
-			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
-			    <div class="cart">
-				   <div class="price">
-					  <div class="vert">
-						 <div class="price_new">$550.00</div>
-						 <div class="price_old">$725.00</div>
-					  </div>
-				   </div>
-				   <a href="#" class="like"></a>
-				   <a href="#" class="bay"></a>
-			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
-		     
-		     <div class="grid_3 product">
-			    <img class="sale" src="images/sale.png" alt="Sale"/>
-			    <div class="prev">
-				   <a href="product_page.jsp"><img src="images/product_7.png" alt="" title="" /></a>
-			    </div><!-- .prev -->
-			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
-			    <div class="cart">
-				   <div class="price">
-					  <div class="vert">
-						 <div class="price_new">$550.00</div>
-						 <div class="price_old">$725.00</div>
-					  </div>
-				   </div>
-				   <a href="#" class="like"></a>
-				   <a href="#" class="bay"></a>
-			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
-		     
-		     <div class="grid_3 product">
-			    <img class="sale" src="images/top.png" alt="Top"/>
-			    <div class="prev">
-				   <a href="product_page.jsp"><img src="images/produkt_slid1.png" alt="" title="" /></a>
-			    </div><!-- .prev -->
-			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
-			    <div class="cart">
-				   <div class="price">
-					  <div class="vert">
-						 <div class="price_new">$550.00</div>
-						 <div class="price_old">$725.00</div>
-					  </div>
-				   </div>
-				   <a href="#" class="like"></a>
-				   <a href="#" class="bay"></a>
-			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
-		     
-		     <div class="grid_3 product">
-			    <img class="sale" src="images/new.png" alt="New"/>
-			    <div class="prev">
-				   <a href="product_page.jsp"><img src="images/product_2.png" alt="" title="" /></a>
-			    </div><!-- .prev -->
-			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
-			    <div class="cart">
-				   <div class="price">
-					  <div class="vert">
-						 <div class="price_new">$550.00</div>
-						 <div class="price_old">$725.00</div>
-					  </div>
-				   </div>
-				   <a href="#" class="like"></a>
-				   <a href="#" class="bay"></a>
-			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
-		     
-		     <div class="grid_3 product">
-			    <div class="prev">
-				   <a href="product_page.jsp"><img src="images/product_8.png" alt="" title="" /></a>
-			    </div><!-- .prev -->
-			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
-			    <div class="cart">
-				   <div class="price">
-					  <div class="vert">
-						 <div class="price_new">$550.00</div>
-						 <div class="price_old">$725.00</div>
-					  </div>
-				   </div>
-				   <a href="#" class="like"></a>
-				   <a href="#" class="bay"></a>
-			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
-		     
-		     <div class="grid_3 product">
-			    <img class="sale" src="images/sale.png" alt="Sale"/>
-			    <div class="prev">
-				   <a href="product_page.jsp"><img src="images/product_9.png" alt="" title="" /></a>
-			    </div><!-- .prev -->
-			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
-			    <div class="cart">
-				   <div class="price">
-					  <div class="vert">
-						 <div class="price_new">$550.00</div>
-						 <div class="price_old">$725.00</div>
-					  </div>
-				   </div>
-				   <a href="#" class="like"></a>
-				   <a href="#" class="bay"></a>
-			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
-		     
-		     <div class="grid_3 product">
-			    <img class="sale" src="images/new.png" alt="New"/>
-			    <div class="prev">
-				   <a href="product_page.jsp"><img src="images/product_10.png" alt="" title="" /></a>
-			    </div><!-- .prev -->
-			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
-			    <div class="cart">
-				   <div class="price">
-					  <div class="vert">
-						 <div class="price_new">$550.00</div>
-						 <div class="price_old">$725.00</div>
-					  </div>
-				   </div>
-				   <a href="#" class="like"></a>
-				   <a href="#" class="bay"></a>
-			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
+	      	<% 
+	      		List<Goods> goods = (List<Goods>)session.getAttribute("catalog");
+	      		if (goods != null) {
+	      			for (int i = 0; i < goods.size();i++ ) {
+		      			out.print("<div class=\"grid_3 product\">");
+		      			out.print("<div class=\"prev\">");
+		      			out.print("<a href=\"product_page.jsp\"><img src=\""+goods.get(i).getImgAddress()+"\" alt=\"\" title=\"\" /></a>");
+		      			out.print("</div>");
+		      			//out.print("<h3 class=\"title\">Febreze Air Effects New Zealand Springs</h3>");
+		      			out.print("<div class=\"cart\"><div class=\"price\"><div class=\"vert\">");
+						out.print("<div class=\"price_new\">$550.00</div><div class=\"price_old\">$725.00</div>");
+						out.print("</div></div><a href=\"#\" class=\"like\"></a><a href=\"#\" class=\"bay\"></a></div></div>");
+	      			}
+	      		}
+	      	%>
 	    
 	      <div class="clear"></div>
 	      </div><!-- .grid_product -->
