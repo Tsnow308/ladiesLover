@@ -209,13 +209,15 @@
 	      			for (int i = 0; i < goods.size();i++ ) {
 		      			out.print("<div class=\"grid_3 product\">");
 		      			out.print("<div class=\"prev\">");
-		      			out.print("<a href=\"product_page.jsp\" onClick=\"$.ajax({type:\"GET\",url:\"getCatalog.action\",data:\"{\"goodsid\":"+goods.get(i).getId()+"}\",dataType:\"json\",success:function(data){},error:function(data{}});\"><img src=\""+goods.get(i).getImgAddress()+"\" alt=\"\" title=\"\" /></a>");
+		      			out.print("<a href=\"product_page.jsp\" onClick=\'$.ajax({type:\"POST\",url:\"getGoodDetail.action\",data:\"{\"id\":"+goods.get(i).getId().intValue()+"}\",dataType:\"json\",success:function(data){},error:function(data{}});\'><img src=\""+goods.get(i).getImgAddress()+"\" alt=\"\" title=\"\" /></a>");
 		      			out.print("</div>");
 		      			//out.print("<h3 class=\"title\">Febreze Air Effects New Zealand Springs</h3>");
 		      			out.print("<div class=\"cart\"><div class=\"price\"><div class=\"vert\">");
 						out.print("<div class=\"price_new\">$550.00</div><div class=\"price_old\">$725.00</div>");
 						out.print("</div></div><a href=\"#\" class=\"like\"></a><a href=\"#\" class=\"bay\"></a></div></div>");
 	      			}
+	      		} else {
+	      			out.print("no data");
 	      		}
 	      	%>
 	    

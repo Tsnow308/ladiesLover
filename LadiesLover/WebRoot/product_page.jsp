@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ page import="model.Goods"%>
 <html>
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
@@ -267,9 +268,23 @@
 				<img class="sale" src="images/sale.png" alt="Sale"/>
 				<div class="preview slides_container">
 					<div class="prev_bg">
+
+						<% 
+							Goods good = (Goods)session.getAttribute("goods");
+
+							if (good != null) {
+								out.print("<a href=\""+good.getImgAddress()+"\" class=\"jqzoom\" rel='gal1' title=\"\">");
+								out.print("<img src=\""+good.getImgAddress()+"\"  title=\"\" alt=\"\"/></a>");
+							} else {
+								out.print("<a href=\"images/produkt_slid.png\" class=\"jqzoom\" rel='gal1' title=\"\"><img src=\"images/produkt_slid.png\"title=\"\" alt=\"\"/></a>");
+						}
+							
+						%>
+<!--
 						<a href="images/produkt_slid.png" class="jqzoom" rel='gal1' title="">
 							<img src="images/produkt_slid.png"  title="" alt=""/>
 						</a>
+					-->
 					</div>
 				</div><!-- .prev -->
 
