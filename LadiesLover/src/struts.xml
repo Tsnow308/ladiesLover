@@ -10,5 +10,9 @@
 			<result name="error">error.jsp</result>  
             <result name="success">index.jsp</result>
 		</action>
+		<action name="getCatalog" class="GoodsAction" method="getCatalog">
+			<result name="error">error.jsp</result>  
+            <result name="success">index.jsp</result>
+		</action>
 	</package>
 </struts>    
