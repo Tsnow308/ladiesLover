@@ -1,5 +1,7 @@
 package service;
 
+import java.util.List;
+
 import model.Goods;
 import model.GoodsDAO;
 
@@ -12,5 +14,15 @@ public class GoodsService {
 
 	public void setGoodsDAO(GoodsDAO goodsDAO) {
 		this.goodsDAO = goodsDAO;
+	}
+	
+	public List getCatalog(){
+		List result = goodsDAO.findAll();
+		if(result != null){
+			return result;
+		}
+		else{
+			return null;
+		}
 	}
 }
