@@ -65,11 +65,25 @@
 	      });             
        })
   </script>
+
+  <script type="text/javascript">
+  	$.ajax({
+  		type:"GET",
+  		url:"getCatalog.action",
+  		data:"", // 参数
+  		dataType:"json",
+  		success:function(data){
+
+  		},
+  		error:function(data){
+  			
+  		}
+  	});
+  </script>
     
 </head>
 <body>
   <div class="container_12">
-
 <jsp:include page="header.jsp" flush="true"/>
    
   <!-- <div class="container_12">
@@ -183,6 +197,9 @@
 	      </div> -->
 	      
 	      <div class="grid_product">
+
+
+
 		     <div class="grid_3 product">
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/product_1.png" alt="" title="" /></a>
