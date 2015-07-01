@@ -73,30 +73,30 @@
         <div id="slider">
           <div id="slide1">
             <img src="images/content/slide1.jpg" alt="" title="" />
-            <div class="slid_text">
+            <!--<div class="slid_text">
               <h3 class="slid_title"><span>Breeze Theme</span></h3>
               <p><span>Breeze is the 14 stylish HTML templates,</span></p>
               <p><span>which will helps you boost sales</span></p>
               <p><span>and receive good feedback from your clients.</span></p>
-            </div>
+            </div>-->
           </div>
 
           <div id="slide2">
             <img src="images/content/slide2.jpg" alt="" title="" />
-            <div class="slid_text">
+            <!--<div class="slid_text">
               <h3 class="slid_title"><span>Flexibility</span></h3>
               <p><span>Every product, which you are selling,</span></p>
               <p><span>will look great with Breeze theme.</span></p>
-            </div>
+            </div>-->
           </div>
 
           <div id="slide3">
             <img src="images/content/slide3.jpg" alt="" title="" />
-            <div class="slid_text">
+            <!--<div class="slid_text">
               <h3 class="slid_title"><span>Accuracy and Easiness</span></h3>
               <p><span>Breeze design is mere and accurate,</span></p>
               <p><span>so it will satisfy everybody.</span></p>
-            </div>
+            </div>-->
           </div>
         </div><!-- .slider -->
         <div id="myController">
@@ -113,27 +113,7 @@
 
   <section id="main" class="home">
     <div class="container_12">
-      <div id="top_button">
-        <div class="grid_4">
-          <a href="#" class="button_block best_price">
-            <img src="images/banner1.png" alt="Banner 1"/>
-          </a><!-- .best_price -->
-        </div><!-- .grid_4 -->
-
-        <div class="grid_4">
-          <a href="#" class="button_block new_smells">
-            <img src="images/banner2.png" alt="Banner 2"/>
-          </a><!-- .new smells -->
-        </div><!-- .grid_4 -->
-
-        <div class="grid_4">
-          <a href="#" class="button_block only_natural">
-            <img src="images/banner3.png" alt="Banner 3"/>
-          </a><!-- .only_natural -->
-        </div><!-- .grid_4 -->
-
-        <div class="clear"></div>
-      </div><!-- #top_button -->
+      
 
       <div class="clear"></div>
 
@@ -158,7 +138,7 @@
               <div class="prev">
                 <a href="product_page.jsp"><img src="images/product_1.png" alt="" title="" /></a>
               </div><!-- .prev -->
-              <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+              <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
               <div class="cart">
                 <div class="price">
                 <div class="vert">
@@ -178,7 +158,7 @@
               <div class="prev">
                 <a href="product_page.jsp"><img src="images/product_2.png" alt="" title="" /></a>
               </div><!-- .prev -->
-              <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+              <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
               <div class="cart">
                 <div class="price">
                 <div class="vert">
@@ -197,7 +177,7 @@
               <div class="prev">
                 <a href="product_page.jsp"><img src="images/product_3.png" alt="" title="" /></a>
               </div><!-- .prev -->
-              <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+              <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
               <div class="cart">
                 <div class="price">
                 <div class="vert">
@@ -216,7 +196,7 @@
               <div class="prev">
                 <a href="product_page.jsp"><img src="images/product_4.png" alt="" title="" /></a>
               </div><!-- .prev -->
-              <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+              <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
               <div class="cart">
                 <div class="price">
                 <div class="vert">
@@ -235,7 +215,7 @@
               <div class="prev">
                 <a href="product_page.jsp"><img src="images/product_8.png" alt="" title="" /></a>
               </div><!-- .prev -->
-              <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+              <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
               <div class="cart">
                 <div class="price">
                 <div class="vert">
@@ -273,7 +253,7 @@
               <div class="prev">
                 <a href="product_page.jsp"><img src="images/product_5.png" alt="" title="" /></a>
               </div><!-- .prev -->
-              <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+              <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
               <div class="cart">
                 <div class="price">
                 <div class="vert">
@@ -293,7 +273,7 @@
               <div class="prev">
                 <a href="product_page.jsp"><img src="images/product_6.png" alt="" title="" /></a>
               </div><!-- .prev -->
-              <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+              <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
               <div class="cart">
                 <div class="price">
                 <div class="vert">
@@ -312,7 +292,7 @@
               <div class="prev">
                 <a href="product_page.jsp"><img src="images/product_7.png" alt="" title="" /></a>
               </div><!-- .prev -->
-              <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+              <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
               <div class="cart">
                 <div class="price">
                 <div class="vert">
@@ -331,7 +311,7 @@
               <div class="prev">
                 <a href="product_page.jsp"><img src="images/produkt_slid1.png" alt="" title="" /></a>
               </div><!-- .prev -->
-              <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+              <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
               <div class="cart">
                 <div class="price">
                 <div class="vert">
@@ -350,7 +330,7 @@
               <div class="prev">
                 <a href="product_page.jsp"><img src="images/product_9.png" alt="" title="" /></a>
               </div><!-- .prev -->
-              <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+              <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
               <div class="cart">
                 <div class="price">
                 <div class="vert">

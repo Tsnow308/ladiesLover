@@ -23,7 +23,7 @@
       <div class="grid_3">
         <hgroup>
           <h1 id="site_logo" ><a href="index.jsp" title=""><img src="images/logo.png" alt="Online Store Theme Logo"/></a></h1>
-          <h2 id="site_description">专注女鞋100年</h2>
+          <!--<h2 id="site_description">专注女鞋</h2>-->
         </hgroup>
       </div><!-- .grid_3 -->
 
@@ -36,7 +36,7 @@
       <div class="grid_header_up_right">
         <ul id="cart_nav">
           <li>
-            <a class="cart_li" href="shopping_cart.jsp">购物车</a>
+            <a class="cart_li" href="shopping_cart.jsp">shopping_cart</a>
             <!-- <ul class="cart_cont">
               <li class="no_border"><p>Recently added item(s)</p></li>
               <li>
@@ -68,7 +68,7 @@
 
         <nav class="private">
           <ul id="userStatus">
-            <!--<li><a href="catalog_list.jsp">我的账户</a></li>
+            <!--<li><a href="catalog_list.jsp">my account</a></li>
     <li class="separator">|</li>-->
 
             <%
@@ -95,15 +95,15 @@
       <div class="grid_12">
         <nav class="primary">
           <ul>
-            <li class="curent"><a href="index.jsp">主页</a></li>
-            <li><a href="catalog_grid.jsp">女性</a></li>
-            <li><a href="catalog_grid.jsp">少女</a></li>
-            <li><a href="catalog_grid.jsp">童鞋</a></li>
-            <li><a href="catalog_grid.jsp">运动</a></li>
-            <li><a href="catalog_grid.jsp">休闲</a></li>
-            <li><a href="catalog_grid.jsp">高跟</a></li>
-            <li><a href="catalog_grid.jsp">折扣</a></li>
-            <li><a href="catalog_grid.jsp">畅销</a></li>
+            <li class="curent"><a href="index.jsp">home</a></li>
+            <li><a href="catalog_grid.jsp">women</a></li>
+            <li><a href="catalog_grid.jsp">girls</a></li>
+            <!--<li><a href="catalog_grid.jsp">children</a></li>-->
+            <li><a href="catalog_grid.jsp">sports</a></li>
+            <li><a href="catalog_grid.jsp">casual</a></li>
+            <li><a href="catalog_grid.jsp">heels</a></li>
+            <li><a href="catalog_grid.jsp">sale</a></li>
+            <li><a href="catalog_grid.jsp">best</a></li>
           </ul>
         </nav><!-- .primary -->
       </div><!-- .grid_12 -->

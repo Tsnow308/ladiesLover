@@ -87,53 +87,53 @@
        <div id="sidebar" class="grid_3">
 
        	<aside id="categories_styles">
-		     <h3>款式</h3>
+		     <h3>Style</h3>
 
 		     <nav class="left_menu">
 			    <ul>
-				   <li><a href="#">运动 <span>(21)</span></a></li>
-				   <li><a href="#">休闲 <span> (27)</span></a></li>
-				   <li><a href="#">正式 <span>(33)</span></a></li>
-				   <li><a href="#">其他 <span>(17)</span></a></li>
+				   <li><a href="#">sports <span>(21)</span></a></li>
+				   <li><a href="#">casual <span> (27)</span></a></li>
+				   <li><a href="#">formal <span>(33)</span></a></li>
+				   <li><a href="#">others <span>(17)</span></a></li>
 			    </ul>
 		     </nav><!-- .left_menu -->
 	      </aside><!-- #categories -->
 
 	      <aside id="categories_brand">
-		     <h3>品牌</h3>
+		     <h3>Brand</h3>
 
 		     <nav class="left_menu">
 			    <ul>
-				   <li><a href="#">牌子1 <span>(21)</span></a></li>
-				   <li><a href="#">牌子2 <span> (27)</span></a></li>
-				   <li><a href="#">牌子3 <span>(33)</span></a></li>
-				   <li><a href="#">其他 <span>(17)</span></a></li>
+				   <li><a href="#">Jason Wu <span>(21)</span></a></li>
+				   <li><a href="#">DOLCE & GABBANA <span> (27)</span></a></li>
+				   <li><a href="#">Alexander mcqueen <span>(33)</span></a></li>
+				   <li><a href="#">others <span>(17)</span></a></li>
 			    </ul>
 		     </nav><!-- .left_menu -->
 	      </aside><!-- #categories -->
 
 	      <aside id="categories_heel">
-		     <h3>跟高</h3>
+		     <h3>heels</h3>
 
 		     <nav class="left_menu">
 			    <ul>
 				   <li><a href="#">3cm <span>(21)</span></a></li>
 				   <li><a href="#">5cm <span> (27)</span></a></li>
 				   <li><a href="#">7cm <span>(33)</span></a></li>
-				   <li><a href="#">其他 <span>(17)</span></a></li>
+				   <li><a href="#">others <span>(17)</span></a></li>
 			    </ul>
 		     </nav><!-- .left_menu -->
 	      </aside><!-- #categories -->
 
 	      <aside id="categories_price">
-		     <h3>价格</h3>
+		     <h3>price</h3>
 
 		     <nav class="left_menu">
 			    <ul>
 				   <li><a href="#">&lt;100 <span>(21)</span></a></li>
 				   <li><a href="#">100 - 200 <span> (27)</span></a></li>
 				   <li><a href="#">200 - 300 <span>(33)</span></a></li>
-				   <li><a href="#">其他 <span>(17)</span></a></li>
+				   <li><a href="#">others <span>(17)</span></a></li>
 			    </ul>
 		     </nav><!-- .left_menu -->
 	      </aside><!-- #categories -->
@@ -141,7 +141,7 @@
        </div><!-- .sidebar -->
       
        <div id="content" class="grid_9">
-	      <h1 class="page_title">商品列表</h1>
+	      <h1 class="page_title">List</h1>
 	      
 	      <!-- <div class="options">
 		     <div class="grid-list">
@@ -187,7 +187,7 @@
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/product_1.png" alt="" title="" /></a>
 			    </div><!-- .prev -->
-			    <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
 			    <div class="cart">
 				   <div class="price">
 					  <div class="vert">
@@ -205,7 +205,7 @@
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/product_2.png" alt="" title="" /></a>
 			    </div><!-- .prev -->
-			    <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
 			    <div class="cart">
 				   <div class="price">
 					  <div class="vert">
@@ -223,7 +223,7 @@
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/product_3.png" alt="" title="" /></a>
 			    </div><!-- .prev -->
-			    <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
 			    <div class="cart">
 				   <div class="price">
 					  <div class="vert">
@@ -241,7 +241,7 @@
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/product_4.png" alt="" title="" /></a>
 			    </div><!-- .prev -->
-			    <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
 			    <div class="cart">
 				   <div class="price">
 					  <div class="vert">
@@ -258,7 +258,7 @@
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/product_5.png" alt="" title="" /></a>
 			    </div><!-- .prev -->
-			    <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
 			    <div class="cart">
 				   <div class="price">
 					  <div class="vert">
@@ -275,7 +275,7 @@
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/product_6.png" alt="" title="" /></a>
 			    </div><!-- .prev -->
-			    <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
 			    <div class="cart">
 				   <div class="price">
 					  <div class="vert">
@@ -293,7 +293,7 @@
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/product_7.png" alt="" title="" /></a>
 			    </div><!-- .prev -->
-			    <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
 			    <div class="cart">
 				   <div class="price">
 					  <div class="vert">
@@ -311,7 +311,7 @@
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/produkt_slid1.png" alt="" title="" /></a>
 			    </div><!-- .prev -->
-			    <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
 			    <div class="cart">
 				   <div class="price">
 					  <div class="vert">
@@ -329,7 +329,7 @@
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/product_2.png" alt="" title="" /></a>
 			    </div><!-- .prev -->
-			    <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
 			    <div class="cart">
 				   <div class="price">
 					  <div class="vert">
@@ -346,7 +346,7 @@
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/product_8.png" alt="" title="" /></a>
 			    </div><!-- .prev -->
-			    <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
 			    <div class="cart">
 				   <div class="price">
 					  <div class="vert">
@@ -364,7 +364,7 @@
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/product_9.png" alt="" title="" /></a>
 			    </div><!-- .prev -->
-			    <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
 			    <div class="cart">
 				   <div class="price">
 					  <div class="vert">
@@ -382,7 +382,7 @@
 			    <div class="prev">
 				   <a href="product_page.jsp"><img src="images/product_10.png" alt="" title="" /></a>
 			    </div><!-- .prev -->
-			    <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+			    <!--<h3 class="title">Febreze Air Effects New Zealand Springs</h3>-->
 			    <div class="cart">
 				   <div class="price">
 					  <div class="vert">
@@ -413,7 +413,7 @@
 			    <li class="next"><a href="#">&#8594;</a></li>
 		     </ul>
 	      </div><!-- .pagination -->
-	      <p class="pagination_info">Displaying 1 to 12 (of 100 products)</p>
+	      <!--<p class="pagination_info">Displaying 1 to 12 (of 100 products)</p>-->
        </div><!-- #content -->
        
       <div class="clear"></div>

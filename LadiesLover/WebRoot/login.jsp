@@ -81,29 +81,29 @@
     <div class="container_12">      
        <div id="content">
 		<div class="grid_12">
-			<h1 class="page_title">注册或登录已有账户</h1>
+			<h1 class="page_title">LogIn or LogUp</h1>
 		</div>
 		
     <div id="blank_div"></div>
 
     <div class="grid_register">
       <form class="registed" action="register.action" method="post" enctype="multipart/form-data">
-        <h2>未注册用户</h2>
+        <h2>LogUp</h2>
               
-        <p>如果您尚未拥有一个账户，快速注册：</p>
+        <!--<p>如果您尚未拥有一个账户，快速注册：</p>-->
               
         <div class="email">
-          <strong>邮箱地址:</strong><sup class="surely">*</sup><br/>
+          <strong>Email Adress:</strong><sup class="surely">*</sup><br/>
           <input type="email" name="username" class="" value="" />
         </div>
               
         <div class="password">
-          <strong>密码:</strong><sup class="surely">*</sup><br/>
+          <strong>Password:</strong><sup class="surely">*</sup><br/>
           <input id="password_reg" type="password" name="password" class="" value="" />
         </div>
 
         <div class="password">
-          <strong>重复密码:</strong><sup class="surely">*</sup><br/>
+          <strong>Repeat Password:</strong><sup class="surely">*</sup><br/>
           <input id="password_reg_repeat" type="password" name="pwd_repeat"/>
         </div>
 
@@ -120,37 +120,37 @@
         </div>-->
         
         <div class="submit">                    
-          <input type="submit" value="注册" />
-          <sup class="surely">*</sup><span>不能为空</span>
+          <input type="submit" value="LogUp" />
+          <sup class="surely">*</sup><span>Cannot be Empty</span>
         </div>
       </form>
   </div>
 
 		<div class="grid_login">
 			<form action="login.action" class="registed"  method="post" enctype="multipart/form-data">
-				<h2>已注册用户</h2>
+				<h2>LogIn</h2>
 							
-				<p>如果您已经拥有一个账户，请登录：</p>
+				<!--<p>LogIn</p>-->
 							
 				<div class="email">
-					<strong>邮箱地址:</strong><sup class="surely">*</sup><br/>
+					<strong>Email Address:</strong><sup class="surely">*</sup><br/>
 					<input type="email" name="username" class="" value="" />
 				</div><!-- .email -->
 							
 				<div class="password">
-					<strong>密码:</strong><sup class="surely">*</sup><br/>
+					<strong>PassWord:</strong><sup class="surely">*</sup><br/>
 					<input type="password" name="password" class="" value="" />
-					<a class="forgot" href="#">忘记密码?</a>
+					<a class="forgot" href="#">Forget Password?</a>
 				</div><!-- .password -->
 				
 				<div class="remember">
 					<input class="niceCheck" type="checkbox" name="Remember_password" />
-					<span class="rem">记住我</span>
+					<span class="rem">Remember me</span>
 				</div><!-- .remember -->
 				
 				<div class="submit">										
-					<input type="submit" value="登录" />
-					<sup class="surely">*</sup><span>不能为空</span>
+					<input type="submit" value="LogIn" />
+					<sup class="surely">*</sup><span>Cannot be Empty</span>
 				</div><!-- .submit -->
 			</form><!-- .registed -->
   </div><!-- .grid_6 -->

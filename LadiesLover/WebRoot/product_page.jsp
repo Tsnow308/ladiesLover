@@ -102,53 +102,53 @@
 
 
 	      <aside id="categories_styles">
-		     <h3>款式</h3>
+		     <h3>Style</h3>
 
 		     <nav class="left_menu">
 			    <ul>
-				   <li><a href="#">运动 <span>(21)</span></a></li>
-				   <li><a href="#">休闲 <span> (27)</span></a></li>
-				   <li><a href="#">正式 <span>(33)</span></a></li>
-				   <li><a href="#">其他 <span>(17)</span></a></li>
+				   <li><a href="#">sports <span>(21)</span></a></li>
+				   <li><a href="#">casual <span> (27)</span></a></li>
+				   <li><a href="#">formal <span>(33)</span></a></li>
+				   <li><a href="#">others <span>(17)</span></a></li>
 			    </ul>
 		     </nav><!-- .left_menu -->
 	      </aside><!-- #categories -->
 
 	      <aside id="categories_brand">
-		     <h3>品牌</h3>
+		     <h3>Brand</h3>
 
 		     <nav class="left_menu">
 			    <ul>
-				   <li><a href="#">牌子1 <span>(21)</span></a></li>
-				   <li><a href="#">牌子2 <span> (27)</span></a></li>
-				   <li><a href="#">牌子3 <span>(33)</span></a></li>
-				   <li><a href="#">其他 <span>(17)</span></a></li>
+				   <li><a href="#">Jason Wu <span>(21)</span></a></li>
+				   <li><a href="#">Dolce & Gabbana <span> (27)</span></a></li>
+				   <li><a href="#">Alexander Macqueen <span>(33)</span></a></li>
+				   <li><a href="#">others <span>(17)</span></a></li>
 			    </ul>
 		     </nav><!-- .left_menu -->
 	      </aside><!-- #categories -->
 
 	      <aside id="categories_heel">
-		     <h3>跟高</h3>
+		     <h3>Heels</h3>
 
 		     <nav class="left_menu">
 			    <ul>
 				   <li><a href="#">3cm <span>(21)</span></a></li>
 				   <li><a href="#">5cm <span> (27)</span></a></li>
 				   <li><a href="#">7cm <span>(33)</span></a></li>
-				   <li><a href="#">其他 <span>(17)</span></a></li>
+				   <li><a href="#">others <span>(17)</span></a></li>
 			    </ul>
 		     </nav><!-- .left_menu -->
 	      </aside><!-- #categories -->
 
 	      <aside id="categories_price">
-		     <h3>价格</h3>
+		     <h3>Price</h3>
 
 		     <nav class="left_menu">
 			    <ul>
 				   <li><a href="#">&lt;100 <span>(21)</span></a></li>
 				   <li><a href="#">100 - 200 <span> (27)</span></a></li>
 				   <li><a href="#">200 - 300 <span>(33)</span></a></li>
-				   <li><a href="#">其他 <span>(17)</span></a></li>
+				   <li><a href="#">others <span>(17)</span></a></li>
 			    </ul>
 		     </nav><!-- .left_menu -->
 	      </aside><!-- #categories -->
@@ -318,13 +318,13 @@
 					<div class="block_cart">
 						<div class="obn_like">
 							<!-- <div class="obn"><a href="#" class="obn">Add to Compare</a></div> -->
-							<div class="like"><a href="#" class="like">添加至心愿单</a></div>
+							<div class="like"><a href="#" class="like"></a></div>
 						</div>
 
 						<div class="cart">
-							<a href="#" class="bay">添加至购物车</a>
+							<a href="#" class="bay">add to cart</a>
 							<input type="text" name="" class="number" value="1" />
-							<span>数量:</span>
+							<span>quantity:</span>
 						</div>
 						<div class="clear"></div>
 					</div><!-- .block_cart -->
@@ -339,7 +339,7 @@
 
 			<div class="grid_9" >
 				<div id="wrapper_tab" class="tab1">
-					<h2>商品描述</h2>
+					<h2>Description</h2>
 					<!-- <a href="#" class="tab1 tab_link">Description</a> -->
 					<!-- <a href="#" class="tab2 tab_link">Reviews</a>
 					<a href="#" class="tab3 tab_link">Custom Tab</a> -->
