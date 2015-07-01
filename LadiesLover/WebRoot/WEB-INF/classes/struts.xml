@@ -14,5 +14,9 @@
 			<result name="error">error.jsp</result>  
             <result name="success">index.jsp</result>
 		</action>
+		<action name="getGoodDetail" class="GoodsAction" method="getGoodDetail">
+			<result name="error">error.jsp</result>  
+            <result name="success">index.jsp</result>
+		</action>
 	</package>
 </struts>    

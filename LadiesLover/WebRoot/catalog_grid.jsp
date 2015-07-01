@@ -67,6 +67,8 @@
 	      });             
        })
   </script>
+  <script>
+  </script>
 
   <script type="text/javascript">
   	$.ajax({
@@ -207,7 +209,7 @@
 	      			for (int i = 0; i < goods.size();i++ ) {
 		      			out.print("<div class=\"grid_3 product\">");
 		      			out.print("<div class=\"prev\">");
-		      			out.print("<a href=\"product_page.jsp\"><img src=\""+goods.get(i).getImgAddress()+"\" alt=\"\" title=\"\" /></a>");
+		      			out.print("<a href=\"product_page.jsp\" onClick=\"$.ajax({type:\"GET\",url:\"getCatalog.action\",data:\"{\"goodsid\":"+goods.get(i).getId()+"}\",dataType:\"json\",success:function(data){},error:function(data{}});\"><img src=\""+goods.get(i).getImgAddress()+"\" alt=\"\" title=\"\" /></a>");
 		      			out.print("</div>");
 		      			//out.print("<h3 class=\"title\">Febreze Air Effects New Zealand Springs</h3>");
 		      			out.print("<div class=\"cart\"><div class=\"price\"><div class=\"vert\">");
